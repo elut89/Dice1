@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CommonSteps extends TestBase{
-    protected static final String GOOGLE_API_KEY = "AIzaSyBKLgQNg5yHR79_gYbPZZIVKzl8adfB4sE";
+    protected static final String GOOGLE_API_KEY = " ";
 
     public static WebElement waitForElement(WebDriver driver, By expectedElement) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 10);

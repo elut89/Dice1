@@ -30,11 +30,11 @@ public class RadiusSearchTest extends TestBase {
     @Test
     public void testJobLocationSearchRadius() throws IOException {
         dice.homePage.open();
-        dice.homePage.typeJobTile("");  // input Job Title
-        dice.homePage.typeLocation(""); // input Location
+        dice.homePage.typeJobTile("Qa Tester");  // input Job Title
+        dice.homePage.typeLocation("Los Angeles"); // input Location
         dice.homePage.submitSearch();
         dice.resultPage.setResultPageParameters();
-        dice.resultPage.inputRadiusValue("");  // input search radius
+        dice.resultPage.inputRadiusValue("10");  // input search radius
         Assert.assertTrue(dice.resultPage.getTotalJobCount() > 0, "No Jobs Found");
         //dice.resultPage.createCommonLogFile("testJobLocationSearchRadiusCommonLog");
         dice.resultPage.createErrorLogFile("testJobLocationSearchRadius"); // fileNameError must be the same as test name
