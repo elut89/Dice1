@@ -30,28 +30,29 @@ public class RadiusSearchTest extends TestBase {
     @Test
     public void testJobLocationSearchRadius() throws IOException {
         dice.homePage.open();
-        dice.homePage.typeJobTile("QA Tester");  // input Job Title
-        dice.homePage.typeLocation("Los Angeles"); // input Location
+        dice.homePage.typeJobTile("");  // input Job Title
+        dice.homePage.typeLocation(""); // input Location
         dice.homePage.submitSearch();
         dice.resultPage.setResultPageParameters();
-        dice.resultPage.inputRadiusValue("10");  // input search radius
+        dice.resultPage.inputRadiusValue("");  // input search radius
         Assert.assertTrue(dice.resultPage.getTotalJobCount() > 0, "No Jobs Found");
         //dice.resultPage.createCommonLogFile("testJobLocationSearchRadiusCommonLog");
         dice.resultPage.createErrorLogFile("testJobLocationSearchRadius"); // fileNameError must be the same as test name
         Assert.assertFalse(dice.resultPage.getDistanceCheckResults().contains("Error. Job Location outside the search radius."), "The testJobLocationSearchRadius found Job Locations that are outside the search radius. Please check the: Error Log file with the timestamp: " + CommonSteps.getDateStr() );
     }
 
-    @Test
-    public void testJobLocationSearchRadiusCalculate() throws IOException {
-        dice.homePage.open();
-        dice.homePage.typeJobTile("QA Tester");
-        dice.homePage.typeLocation("Los Angeles");
-        dice.homePage.submitSearch();
-        dice.resultPage.setResultPageParameters();
-        dice.resultPage.inputRadiusValue("10");
-        Assert.assertTrue(dice.resultPage.getTotalJobCount() > 0, "No Jobs Found");
-        dice.resultPage.createCommonLogFile("testJobLocationSearchRadiusCalculate");
-        dice.resultPage.createErrorLogFile("testJobLocationSearchRadiusCalculate"); // fileNameError must be the same as test name
-        Assert.assertFalse(dice.resultPage.getCalculatedDistanceCheckResults().contains("Error. Job Location outside the search radius."), "The testJobLocationSearchRadiusCalculate found Job Locations that are outside the search radius. Please check the: Error Log file with the timestamp: " + CommonSteps.getDateStr() );
-    }
+    //TODO finish second test
+//    @Test
+//    public void testJobLocationSearchRadiusCalculate() throws IOException {
+//        dice.homePage.open();
+//        dice.homePage.typeJobTile("QA Tester");
+//        dice.homePage.typeLocation("Los Angeles");
+//        dice.homePage.submitSearch();
+//        dice.resultPage.setResultPageParameters();
+//        dice.resultPage.inputRadiusValue("10");
+//        Assert.assertTrue(dice.resultPage.getTotalJobCount() > 0, "No Jobs Found");
+//        dice.resultPage.createErrorLogFile("testJobLocationSearchRadiusCalculate"); // fileNameError must be the same as test name
+//        Assert.assertFalse(dice.resultPage.getCalculatedDistanceCheckResults().contains("Error. Job Location outside the search radius."), "The testJobLocationSearchRadiusCalculate found Job Locations that are outside the search radius. Please check the: Error Log file with the timestamp: " + CommonSteps.getDateStr() );
+//    }
+
 }

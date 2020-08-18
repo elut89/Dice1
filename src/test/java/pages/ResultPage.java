@@ -221,27 +221,6 @@ public class ResultPage extends TestBase {
         return jobLocationOutsideTheSearchRadiusArray;
     }
 
-
-    // create Array of All Job Locations that are inside or  outside the search radius.
-    public ArrayList<String> createAllJobLocationInsideAndOutsideTheSearchRadiusArrayCalculated() {
-        ArrayList<String> allJobLocationInsideAndOutsideTheSearchRadiusArrayCalculated = new ArrayList<>();
-        for (int i = 0; i < getCalculatedDistanceBetweenOriginAndDestination().size(); i++) {
-            allJobLocationInsideAndOutsideTheSearchRadiusArrayCalculated.add(Array.get(getIndexNumberOfJobCards(), i) + ".|" + originLocation + "|" + getResultLocations().get(i) + "|" + getCalculatedDistanceBetweenOriginAndDestination().get(i) + " mi.|" + getCalculatedDistanceCheckResults().get(i));
-        }
-        return allJobLocationInsideAndOutsideTheSearchRadiusArrayCalculated;
-    }
-
-    // create a Common Log File. It stores all Job Locations, both inside and outside the search radius.
-    public void createCommonLogFile(String fileNameCommon) throws IOException {
-        int bufferSize = 8 * 1024;
-        BufferedWriter writer = new BufferedWriter(new FileWriter(fileNameCommon + "_" + CommonSteps.getDateStr() + ".txt"), bufferSize);
-        for (String fileContent : createAllJobLocationInsideAndOutsideTheSearchRadiusArrayCalculated()) {
-            writer.write(fileContent + "\n");
-        }
-        writer.flush();
-        writer.close();
-    }
-
     // create a Error Log File. It stores all jobs that are outside the search radius.
     public void createErrorLogFile(String fileNameError) throws IOException {
         int bufferSize = 8 * 1024;

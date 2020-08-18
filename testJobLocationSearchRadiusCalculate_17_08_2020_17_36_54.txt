@@ -1,3 +1,0 @@
-1.|Los Angeles, CA, USA|Los Angeles, CA, USA|0 mi.|Ok. Job Location inside the search radius.
-2.|Los Angeles, CA, USA|Pasadena, CA, USA|0 mi.|Ok. Job Location inside the search radius.
-3.|Los Angeles, CA, USA|Lynwood, CA, USA|0 mi.|Ok. Job Location inside the search radius.
