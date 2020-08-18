@@ -36,7 +36,6 @@ public class RadiusSearchTest extends TestBase {
         dice.resultPage.setResultPageParameters();
         dice.resultPage.inputRadiusValue("10");  // input search radius
         Assert.assertTrue(dice.resultPage.getTotalJobCount() > 0, "No Jobs Found");
-        //dice.resultPage.createCommonLogFile("testJobLocationSearchRadiusCommonLog");
         dice.resultPage.createErrorLogFile("testJobLocationSearchRadius"); // fileNameError must be the same as test name
         Assert.assertFalse(dice.resultPage.getDistanceCheckResults().contains("Error. Job Location outside the search radius."), "The testJobLocationSearchRadius found Job Locations that are outside the search radius. Please check the: Error Log file. ");
     }
